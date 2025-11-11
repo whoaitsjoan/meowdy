@@ -7,18 +7,15 @@ interface IInteractable {
     public void Graze();
 }
 
-public class Interactor : StateManager<Interactor.InteractorStates>
+public class Interactor
 {
-    public enum InteractorStates
-    {
-        Walking,
-        Attention,
-        Questioning,
-        Angry,
-        Reset,
-    }
+    
     public GameObject InteractorSource;
     
+    private void InitializeStates()
+    {
+        
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

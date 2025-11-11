@@ -1,48 +1,45 @@
 using UnityEngine;
-using System;
-using System.Collections.Generic;
 
-public abstract class StateManager<EState> : MonoBehaviour where EState: Enum
+public class StateManager : MonoBehaviour
 {
-    protected Dictionary<EState, BaseState<EState>> States = new Dictionary<EState, BaseState<EState>>();
-    public BaseState<EState> CurrentState { get; protected set; }
+
+    BaseState CurrentState;
+   public NPCWalkingState WalkingState = new NPCWalkingState();
+   public NPCAttentionState AttentionState = new NPCAttentionState();
+   public NPCQuestioningState QuestioningState = new NPCQuestioningState();
+   public NPCAngryState AngryState = new NPCAngryState();
+   public NPCResetState ResetState = new NPCResetState();
     protected bool IsTransitioningState = false;
     
-    void Start() { CurrentState.EnterState(); }
+    void Start() { CurrentState.EnterState(this); }
 
 
     void Update()
     {
-        EState nextStateKey = CurrentState.GetNextState();
+        
 
-        if (!IsTransitioningState && nextStateKey.Equals(CurrentState.StateKey))
-            CurrentState.UpdateState();
-        else if (!IsTransitioningState)
-            TransitionToState(nextStateKey);
+        
     }
-
-    public void TransitionToState(EState stateKey)
+    public void SwitchState(BaseState state)
     {
-        IsTransitioningState = true;
-        CurrentState.ExitState();
-        CurrentState = States[stateKey];
-        CurrentState.EnterState();
-        IsTransitioningState = false;
+        CurrentState = state;
+        CurrentState.EnterState(this);
     }
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        CurrentState.OnTriggerEnter2D(other);
+        CurrentState.OnTriggerEnter2D(this, other);
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        CurrentState.OnTriggerStay2D(other);
+        CurrentState.OnTriggerStay2D(this, other);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        CurrentState.OnTriggerExit2D(other);
+        CurrentState.OnTriggerExit2D(this, other);
     }
 
 

@@ -4,12 +4,6 @@ using UnityEngine.InputSystem;
 
 public class MeowAim : MonoBehaviour
 {
-public event EventHandler<MeowFireEventArgs> MeowFire;
-    public class MeowFireEventArgs : EventArgs
-    {
-        public Vector3 pointerEndPosition;
-        public Vector3 meowDirection;
-    }
 
     private Camera mainCamera;
     public GameObject cat;
@@ -18,30 +12,19 @@ public event EventHandler<MeowFireEventArgs> MeowFire;
 
     InputSystem_Actions input;
     public Vector2 mousePosition;
-
-    public GameObject meow;
-
-    public Transform meowTransform;
-
-    public Transform meowFireEndPointTransform;
-    public bool canMeow;
-    private float timer;
-    public float timeBetweenMeowing;
     
 
     private void Awake()
     {
         //input here is bringing in a new instance of our default input map into the scene 
         input = new InputSystem_Actions();
-        //and now input is calling OnLook or OnMeow anytime those inputs are performed based on the input map
+        //and now input is calling OnLook anytime those inputs are performed based on the input map
         input.Player.Look.performed += OnLook;
-        input.Player.Meow.performed += OnMeow;
     }
     private void OnEnable()
     {
         //when this script is turned on, it will also do a separate check on OnLook and make sure input is enable
         input.Player.Look.performed += OnLook;
-        input.Player.Meow.performed += OnMeow;
         input.Enable();
     }
 
@@ -49,7 +32,6 @@ public event EventHandler<MeowFireEventArgs> MeowFire;
     {
         //this does the reverse and makes sure input is disabled when this script turns off
         input.Player.Look.performed -= OnLook;
-        input.Player.Meow.performed -= OnMeow;
         input.Disable();
     }
 
@@ -70,7 +52,6 @@ public event EventHandler<MeowFireEventArgs> MeowFire;
     void Update()
     {
         HandleAiming();
-        HandleMeowing();
         
     }
     private void HandleAiming()
@@ -105,37 +86,5 @@ public event EventHandler<MeowFireEventArgs> MeowFire;
 
 
     }
-
-    private void HandleMeowing()
-    {
-        if (!canMeow)
-        {
-            //tracking time between meows in realtime here
-            timer += Time.deltaTime;
-            if (timer > timeBetweenMeowing)
-            {
-                canMeow = true;
-                timer = 0;
-            }
-        }
-    }
-
-    void OnMeow(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed && canMeow)
-        {
-            canMeow = false;
-            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            //Every few seconds or so depending on the timer, hitting the meow button will spawn a projectile
-            //and the meowPosition handles where/how that projectile moves
-            MeowFire?.Invoke(this, new MeowFireEventArgs
-            {
-                pointerEndPosition = meowFireEndPointTransform.position,
-                meowDirection = mousePosition,
-            });
-            
-        }
-    } 
-
     
 }

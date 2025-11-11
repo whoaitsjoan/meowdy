@@ -1506,11 +1506,6 @@ MonoBehaviour:
   cat: {fileID: 279944681}
   distance: 0.1
   mousePosition: {x: 0, y: 0}
-  meow: {fileID: 0}
-  meowTransform: {fileID: 0}
-  meowFireEndPointTransform: {fileID: 0}
-  canMeow: 0
-  timeBetweenMeowing: 0
 --- !u!212 &984553127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1784,11 +1779,6 @@ MonoBehaviour:
   cat: {fileID: 1228115716}
   distance: 0.1
   mousePosition: {x: 0, y: 0}
-  meow: {fileID: 0}
-  meowTransform: {fileID: 0}
-  meowFireEndPointTransform: {fileID: 0}
-  canMeow: 0
-  timeBetweenMeowing: 0
 --- !u!212 &1360342829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1912,11 +1902,6 @@ MonoBehaviour:
   cat: {fileID: 644649972}
   distance: 0.5
   mousePosition: {x: 0, y: 0}
-  meow: {fileID: 0}
-  meowTransform: {fileID: 0}
-  meowFireEndPointTransform: {fileID: 0}
-  canMeow: 0
-  timeBetweenMeowing: 0
 --- !u!212 &1372913459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2544,11 +2529,6 @@ MonoBehaviour:
   cat: {fileID: 644649972}
   distance: 0.5
   mousePosition: {x: 0, y: 0}
-  meow: {fileID: 0}
-  meowTransform: {fileID: 0}
-  meowFireEndPointTransform: {fileID: 1372913456}
-  canMeow: 1
-  timeBetweenMeowing: 0
 --- !u!212 &2068823668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2635,7 +2615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdfda085015c6b4c9ff5d97935758d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestFiring
-  meowProjectile: {fileID: 1433747883}
 --- !u!1001 &34629484256239945
 PrefabInstance:
   m_ObjectHideFlags: 0

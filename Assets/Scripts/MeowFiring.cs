@@ -42,9 +42,13 @@ public class MeowFiring : MonoBehaviour
             Instantiate(Resources.Load("MeowProjectile", typeof(GameObject)) as GameObject, meowTransform.position,
             Quaternion.Euler(meowTransform.rotation.x, meowTransform.rotation.y, 0));
         }
-    } 
+    }
 
     void Update()
+    {
+        HandleMeowing();
+    }
+      private void HandleMeowing()
     {
         if (!canMeow)
         {
@@ -57,4 +61,6 @@ public class MeowFiring : MonoBehaviour
             }
         }
     }
+    
+
 }

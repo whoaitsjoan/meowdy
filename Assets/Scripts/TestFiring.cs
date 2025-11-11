@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestFiring : MonoBehaviour
 {
-    [SerializeField] private Transform meowProjectile;
+ /*   [SerializeField] private Transform meowProjectile;
     private void Awake()
     {
         GetComponent<MeowAim>().MeowFire += TestFiring_MeowFire;
@@ -23,4 +23,5 @@ public class TestFiring : MonoBehaviour
     {
         
     }
+    */
 }

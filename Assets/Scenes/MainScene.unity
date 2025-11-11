@@ -1648,6 +1648,7 @@ MonoBehaviour:
   canMeow: 1
   timeBetweenMeowing: 0.3
   meowPool: {fileID: 0}
+  meowAnimator: {fileID: 0}
 --- !u!114 &1372913458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,6 +2388,7 @@ MonoBehaviour:
   canMeow: 1
   timeBetweenMeowing: 0.3
   meowPool: {fileID: 632905490}
+  meowAnimator: {fileID: 542331402}
 --- !u!114 &2068823670
 MonoBehaviour:
   m_ObjectHideFlags: 0

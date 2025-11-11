@@ -12,6 +12,8 @@ public class MeowAim : MonoBehaviour
 
     InputSystem_Actions input;
     public Vector2 mousePosition;
+
+    private Vector3 localScale = new Vector3(1f,1f,1f);
     
 
     private void Awake()
@@ -71,7 +73,6 @@ public class MeowAim : MonoBehaviour
         //the angle part here is less important with the pointer being a circle but will point in the right direction
         //if we have an arrow or any other polygonal object in its place
         angle = Mathf.Atan2(v3.y, v3.x) * Mathf.Rad2Deg;
-        //if (angle < 0.0f) angle += 360.0f;
         transform.localEulerAngles = new Vector3(0, 0, angle);
 
         //the x and y position of the pointer are essentially being calculated manually here

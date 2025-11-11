@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    private StateManager NPCStateManager = new StateManager();
+    private StateManager NPCStateManager;
 
     public static List<NPC> NPCList = new List<NPC>();
 
@@ -26,22 +27,29 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     
-    void OnTriggerEnter2D(Collider2D collision)
+   /* void OnTriggerEnter2D(Collider2D collision)
     {
         foreach (Transform child in collision.transform)
         {
             if (child.gameObject.name.Contains("MeowGrazeRange"))
+            {
+                Debug.Log("Graze!");
                 NPCStateManager.SwitchState(NPCStateManager.QuestioningState);
+            }
         }
         if (collision.CompareTag("Meow"))
+        {
+            Debug.Log("Collision!");
             NPCStateManager.SwitchState(NPCStateManager.AttentionState);
+            }
 
         else if (collision.CompareTag("Wall"))
             gameObject.SetActive(false);
 
     }
+    */
 }

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class NPCWalkingState : BaseState
 {
+    
     public override void EnterState(StateManager state)
     {
-       
+        Debug.Log("You are in the walking state!");
+        Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector3.right);
     }
 
     public override void ExitState(StateManager state)

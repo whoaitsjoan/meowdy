@@ -9,6 +9,8 @@ public class MeowFiring : MonoBehaviour
     public bool canMeow;
     private float timer;
     public float timeBetweenMeowing;
+
+    public ObjectPooler meowPool;
     
     private void Awake()
     {
@@ -39,8 +41,12 @@ public class MeowFiring : MonoBehaviour
             //and the meowPosition handles where/how that projectile moves
             canMeow = false;
             Debug.Log("The current position of the pointer is" + meowTransform.position);
-            Instantiate(Resources.Load("MeowProjectile", typeof(GameObject)) as GameObject, meowTransform.position,
-            Quaternion.Euler(meowTransform.rotation.x, meowTransform.rotation.y, 0));
+            GameObject meow = meowPool.GetPooledObject();
+            meow.transform.position = meowTransform.position;
+            meow.transform.Rotate(meowTransform.rotation.x, meowTransform.rotation.y, 0);
+            meow.SetActive(true);
+            //Instantiate(Resources.Load("MeowProjectile", typeof(GameObject)) as GameObject, meowTransform.position,
+            // Quaternion.Euler(meowTransform.rotation.x, meowTransform.rotation.y, 0));
         }
     }
 

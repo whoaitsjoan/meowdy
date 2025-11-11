@@ -3,7 +3,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
 
-    BaseState CurrentState;
+BaseState CurrentState;
    public NPCWalkingState WalkingState = new NPCWalkingState();
    public NPCAttentionState AttentionState = new NPCAttentionState();
    public NPCQuestioningState QuestioningState = new NPCQuestioningState();
@@ -11,7 +11,11 @@ public class StateManager : MonoBehaviour
    public NPCResetState ResetState = new NPCResetState();
     protected bool IsTransitioningState = false;
     
-    void Start() { CurrentState.EnterState(this); }
+    void Start() 
+    {
+        CurrentState = WalkingState;
+        CurrentState.EnterState(this); 
+        }
 
 
     void Update()

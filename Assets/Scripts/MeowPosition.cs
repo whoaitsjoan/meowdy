@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,9 +37,16 @@ public class MeowPosition : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rot + 180);
         }
 
-       
-        void Update()
-        {
 
-        }
+    void Update()
+    {
+
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Wall"))
+            gameObject.SetActive(false);
+
+    }
+}

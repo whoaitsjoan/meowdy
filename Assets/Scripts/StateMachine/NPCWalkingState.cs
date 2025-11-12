@@ -11,13 +11,13 @@ public class NPCWalkingState : BaseState
         Transform t = state.GetComponent<Transform>();
         if (t.position.x < 0 && t.position.y > 0)
         {
-            rb.AddForce(new Vector3(6, 0, 0));
+            rb.AddForce(new Vector3(20, 0, 0));
         }
             
         else if (t.position.x > 10)
         {
             state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
-           rb.AddForce(new Vector3(-6, 0, 0)); 
+           rb.AddForce(new Vector3(-20, 0, 0)); 
         }
             
     }
@@ -32,19 +32,24 @@ public class NPCWalkingState : BaseState
     }
 
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)
-    {
-        foreach (Transform child in other.transform)
-        {
-            if (child.gameObject.name.Contains("MeowGrazeRange"))
-            {
-                Debug.Log("Graze!");
-                state.SwitchState(state.QuestioningState);
-            }
-        }
+    {    
         if (other.CompareTag("Meow"))
         {
             Debug.Log("Collision!");
+            state.IsTransitioningState = false;
             state.SwitchState(state.AttentionState);
+        }
+        else
+        {
+            foreach (Transform child in other.transform)
+            {
+                if (child.gameObject.name.Contains("MeowGrazeRange"))
+                {
+                    Debug.Log("Graze!");
+                    state.IsTransitioningState = false;
+                    state.SwitchState(state.QuestioningState);
+                }
+            }
         }
     }
     

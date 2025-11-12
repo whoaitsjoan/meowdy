@@ -9,7 +9,8 @@ BaseState CurrentState;
    public NPCQuestioningState QuestioningState = new NPCQuestioningState();
    public NPCAngryState AngryState = new NPCAngryState();
    public NPCResetState ResetState = new NPCResetState();
-    protected bool IsTransitioningState = false;
+   public bool IsTransitioningState = false;
+   
     
     void Start() 
     {
@@ -19,11 +20,8 @@ BaseState CurrentState;
 
 
     void Update()
-    {
-        
-
-        
-    }
+    { CurrentState.UpdateState(this); }
+    
     public void SwitchState(BaseState state)
     {
         CurrentState = state;

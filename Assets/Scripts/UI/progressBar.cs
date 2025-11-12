@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class progressBar : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class progressBar : MonoBehaviour
     public UnityEvent timesUp;
     // create variable timeLeft
     public float timeLeft;
-    // Update is called once per frame
+
+    public TextMeshProUGUI cashCount;
+    public TextMeshProUGUI finalCount;
 
     void Start()
     {
@@ -35,6 +38,7 @@ public class progressBar : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.1)
         {
+            FinalScore();
             timesUp.Invoke();
         }
     }
@@ -43,5 +47,11 @@ public class progressBar : MonoBehaviour
     {
         float fillAmount = current / maxTime;
         bar.fillAmount = fillAmount;
+    }
+
+    void FinalScore()
+    {
+        int.TryParse(cashCount.text, out int finalScore);
+        finalCount.text = "Time's Up! \n Final Count: " + finalScore;
     }
 }

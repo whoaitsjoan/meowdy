@@ -38,13 +38,18 @@ public class ObjectPooler : MonoBehaviour
         //if there are no inactive objects, then we need to create a new object
         return CreateNewObj();
     }
-    
+
     private GameObject CreateNewObj()
     {
         GameObject obj = Instantiate(prefab, transform);
         obj.SetActive(false);
         pool.Add(obj);
         return obj;
+    }
+    
+    public void ClearList()
+    {
+        pool.Clear();
     }
 
 }

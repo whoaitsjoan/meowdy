@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCWalkingState : BaseState
@@ -7,7 +8,18 @@ public class NPCWalkingState : BaseState
     {
         Debug.Log("You are in the walking state!");
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector3(3,0,0));
+        Transform t = state.GetComponent<Transform>();
+        if (t.position.x < 0 && t.position.y > 0)
+        {
+            rb.AddForce(new Vector3(6, 0, 0));
+        }
+            
+        else if (t.position.x > 10)
+        {
+            state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
+           rb.AddForce(new Vector3(-6, 0, 0)); 
+        }
+            
     }
 
     public override void ExitState(StateManager state)

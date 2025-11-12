@@ -2,7 +2,9 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Jobs;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TitleCatSpawn : MonoBehaviour
 {
@@ -24,7 +26,8 @@ public class TitleCatSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        if (numberSpawned < 6)
+            StartCoroutine(SpawnCatCoroutine());
         
     }
 
@@ -35,7 +38,13 @@ public class TitleCatSpawn : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
             SpawnCat();
             numberSpawned++;
+            Debug.Log(numberSpawned);
         }
+        if(numberSpawned > 6)
+        {
+            StopCoroutine(SpawnCatCoroutine());
+        }
+        
     }
 
     void SpawnCat()

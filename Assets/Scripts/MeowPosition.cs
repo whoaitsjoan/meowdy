@@ -32,18 +32,16 @@ public class MeowPosition : MonoBehaviour
         //this additional rotation value will likely change again but this is where rotation gets similarly used
         //and then updates our projectile's transform
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        /*if (rot < 90 || rot > -90)
+        if (mousePosition.x > 700)
         {
             Debug.Log("Flip!");
             transform.rotation = Quaternion.Euler(0, 0, rot);
         }
         else
         {
-        */
+        
             transform.rotation = Quaternion.Euler(0, 0, rot + 180);
-        //}
-            
-            
+        }      
         
     }
 

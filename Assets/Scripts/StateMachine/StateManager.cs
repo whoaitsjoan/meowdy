@@ -11,7 +11,7 @@ BaseState CurrentState;
    public NPCResetState ResetState = new NPCResetState();
    public bool IsTransitioningState = false;
    
-    
+    public BaseState GetCurrentState() { return CurrentState; }
     void Start() 
     {
         CurrentState = WalkingState;

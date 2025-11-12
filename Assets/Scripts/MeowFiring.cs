@@ -11,13 +11,20 @@ public class MeowFiring : MonoBehaviour
     public float timeBetweenMeowing;
 
     public ObjectPooler meowPool;
+    public ObjectPooler reverseMeowPool;
+
+    public Vector2 mousePosition;
+
+    private Camera mainCamera;
 
     public Animator meowAnimator;
     
     private void Awake()
     {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         input = new InputSystem_Actions();
         input.Player.Meow.performed += OnMeow;
+        input.Player.Look.performed += OnLook;
     }
     void Start()
     {
@@ -26,13 +33,23 @@ public class MeowFiring : MonoBehaviour
     private void OnEnable()
     {
         input.Player.Meow.performed += OnMeow;
+        input.Player.Look.performed += OnLook;
         input.Enable();
     }
 
     private void OnDisable()
     {
         input.Player.Meow.performed -= OnMeow;
+        input.Player.Look.performed += OnLook;
         input.Disable();
+    }
+
+    void OnLook(InputAction.CallbackContext ctx)
+    {
+        //whenever Look is performed from our InputMap, mousePosition will always read the value of that input 
+        //from any compatible device
+        if (ctx.performed)
+        { mousePosition = ctx.ReadValue<Vector2>(); }
     }
 
     void OnMeow(InputAction.CallbackContext ctx)
@@ -44,7 +61,23 @@ public class MeowFiring : MonoBehaviour
             canMeow = false;
             Debug.Log("The current position of the pointer is" + meowTransform.position);
             meowAnimator.SetTrigger("Meow");
-            GameObject meow = meowPool.GetPooledObject();
+            
+           /* mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            mousePosition.z = mainCamera.nearClipPlane;
+            Vector3 rotation = transform.position - mousePosition;
+            float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+            Debug.Log(rot);
+            */
+            if (mousePosition.x < 700)
+            {
+                Debug.Log("I fired in reverse");
+                meow = reverseMeowPool.GetPooledObject();
+            }
+            else
+            {
+                Debug.Log("I fired!");
+                meow = meowPool.GetPooledObject();
+            }
             meow.transform.position = meowTransform.position;
             meow.transform.Rotate(meowTransform.rotation.x, meowTransform.rotation.y, 0);
             meow.SetActive(true);

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb0650df36a76c04fa8aede4c89db600
+guid: 91b18a5c505fe774e89fc50f653aa296
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4170959929528938536
-    second: Torso3 (2)_0
+      213: 4692212078415106994
+    second: Torso2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Torso3 (2)_0
+      name: Torso2_0
       rect:
         serializedVersion: 2
-        x: 723
-        y: 434
-        width: 515
-        height: 405
+        x: 843
+        y: 432
+        width: 232
+        height: 407
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8df0a04fa06cd16c0800000000000000
-      internalID: -4170959929528938536
+      spriteID: 2b3dab066061e1140800000000000000
+      internalID: 4692212078415106994
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Torso3 (2)_0: -4170959929528938536
+      Torso2_0: 4692212078415106994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

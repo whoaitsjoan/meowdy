@@ -26,6 +26,7 @@ public class Colorizer : MonoBehaviour
     public Color k = new Color(104, 59, 15, 1);
     public Color l = new Color(88, 49, 7, 1);
     public List<Color> skinTones = new List<Color>();
+    public bool noShirtChange;
     void Start()
     {
         HHimage = HeadAndHands.GetComponent<Image>();
@@ -46,12 +47,17 @@ public class Colorizer : MonoBehaviour
         skinTones.Add(l);
         int rand = Random.Range(0, 11);
         HHimage.color = skinTones[rand];
-        Color torsoC = Random.ColorHSV();
+       
         Color legC = Random.ColorHSV();
         Color feetC = Random.ColorHSV();
-        Timage.color = torsoC;
+       
         Limage.color = legC;
         Fimage.color = feetC;
+        if (!noShirtChange)
+        {
+            Color torsoC = Random.ColorHSV();
+            Timage.color = torsoC;
+        }
 
     }
 

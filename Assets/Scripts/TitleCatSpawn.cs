@@ -29,10 +29,10 @@ public class TitleCatSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        if (numberSpawned < 6)
-            StartCoroutine(SpawnCatCoroutine());
-=======
+//<<<<<<< Updated upstream
+        //if (numberSpawned < 6)
+            //StartCoroutine(SpawnCatCoroutine());
+//=======
         spawnInterval = 1.5f;
         if (restart)
         {
@@ -40,7 +40,7 @@ public class TitleCatSpawn : MonoBehaviour
             //StartCoroutine(SpawnCatCoroutine());
             //restart = false;
         }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         
     }
 
@@ -51,12 +51,12 @@ public class TitleCatSpawn : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
             SpawnCat();
             numberSpawned++;
-            Debug.Log(numberSpawned);
+            //Debug.Log(numberSpawned);
         }
-        if(numberSpawned > 6)
+        /*if(numberSpawned > 6)
         {
             StopCoroutine(SpawnCatCoroutine());
-        }
+        }*/
         
     }
 

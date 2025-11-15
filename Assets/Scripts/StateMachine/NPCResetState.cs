@@ -2,9 +2,21 @@ using UnityEngine;
 
 public class NPCResetState : BaseState
 {
+    
     public override void EnterState(StateManager state)
     {
-       
+        Debug.Log("Reset State!");
+        Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
+        Transform t = state.GetComponent<Transform>();
+        if (t.position.x < 0 && t.position.y > 0)
+        {
+            rb.AddForce(new Vector3(20, 20, 0));
+        }
+         else if (t.position.x > 10)
+        {
+           state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
+           rb.AddForce(new Vector3(-20, 20, 0));
+        }
     }
 
     public override void ExitState(StateManager state)
@@ -13,6 +25,9 @@ public class NPCResetState : BaseState
     }
     public override void UpdateState(StateManager state)
     {
+       
+            if (!state.GetComponent<PolygonCollider2D>().IsTouchingLayers(LayerMask.NameToLayer("People")))
+            state.SwitchState(state.WalkingState);
 
     }
     

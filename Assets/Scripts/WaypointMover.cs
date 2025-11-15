@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class WaypointMover : MonoBehaviour
@@ -21,18 +23,33 @@ public class WaypointMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseController.IsGamePaused || isWaiting)
-            return;
+        
 
-        //MoveToWaypoint();
     }
     
-   /* public void MoveToWaypoint(StateManager state)
+   /* public Vector3 MoveToWaypoint(StateManager state)
     {
-        if (state.GetCurrentState == "AttentionState")
+        string currentState = state.GetCurrentState().ToString();
+        if (currentState == "AttentionState")
+        {
 
         Transform target = waypoints[currentWaypointIndex];
-        transform.position = Vector2.MoveTowards(state.transform.position, target.position, moveSpeed)
+        Vector3 moveToPosition = transform.position = Vector2.MoveTowards(state.transform.position, target.position, moveSpeed);
+        if (Vector2.Distance(state.transform.position, target.position) < 0.1f)
+        {
+           StartCoroutine(WaitAtWaypoint());
+           state.SwitchState(state.ResetState);
+           return moveToPosition;
+        }
+        return moveToPosition;
+        }
+        
+    }
+    IEnumerator WaitAtWaypoint()
+    {
+        while (waitTime > 0f)
+        isWaiting = true;
+        yield return new WaitForSeconds(waitTime);
     }
     */
 }

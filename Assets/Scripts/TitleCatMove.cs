@@ -11,6 +11,7 @@ public class TitleCatMove : MonoBehaviour
     //public BoxCollider2D stopZone;
     private Vector3 og;
     public TitleCatSpawn TitleCatSpawn;
+    public float speed;
     void Start()
     {
         back = GetComponent<BoxCollider2D>();
@@ -23,7 +24,7 @@ public class TitleCatMove : MonoBehaviour
     {
         if (gameObject.activeSelf)     
         {
-            cat.transform.position += new Vector3(0.5f, 0f);
+            cat.transform.position += new Vector3(speed, 0f);
             if(cat.transform.position.x > 2050)
             {
                 cat.transform.position = og;

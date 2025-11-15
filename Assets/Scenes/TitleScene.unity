@@ -1328,6 +1328,7 @@ MonoBehaviour:
   cat: {fileID: 1400921572}
   back: {fileID: 1400921577}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!1 &1475734670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1814,7 @@ MonoBehaviour:
   cat: {fileID: 1591219546}
   back: {fileID: 1591219551}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!1 &1598932361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7338889415545100608, guid: ff0b9434a8b8c7a4697aae35b19113fe, type: 3}
@@ -1884,6 +1886,7 @@ MonoBehaviour:
   cat: {fileID: 1598932361}
   back: {fileID: 1598932366}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!50 &1598932368
 Rigidbody2D:
   serializedVersion: 5
@@ -1982,6 +1985,7 @@ MonoBehaviour:
   cat: {fileID: 1651133651}
   back: {fileID: 1651133656}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!1 &1955614024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2207,7 @@ MonoBehaviour:
   cat: {fileID: 1974798520}
   back: {fileID: 1974798525}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!1 &2005270676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2005270677
 Transform:
   m_ObjectHideFlags: 0
@@ -2340,6 +2345,7 @@ MonoBehaviour:
   cat: {fileID: 2006840525}
   back: {fileID: 2006840530}
   TitleCatSpawn: {fileID: 1237976465}
+  speed: 15
 --- !u!1 &2011545393
 GameObject:
   m_ObjectHideFlags: 0

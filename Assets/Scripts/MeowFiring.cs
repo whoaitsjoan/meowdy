@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +20,10 @@ public class MeowFiring : MonoBehaviour
     private Camera mainCamera;
 
     public Animator meowAnimator;
+
+    public AudioSource meowSource;
+    public List<AudioClip> meowList = new List<AudioClip>();
+    public AudioClip currentMeow;
     
     private void Awake()
     {
@@ -25,6 +31,7 @@ public class MeowFiring : MonoBehaviour
         input = new InputSystem_Actions();
         input.Player.Meow.performed += OnMeow;
         input.Player.Look.performed += OnLook;
+        
     }
     void Start()
     {
@@ -61,6 +68,10 @@ public class MeowFiring : MonoBehaviour
             canMeow = false;
             Debug.Log("The current position of the pointer is" + meowTransform.position);
             meowAnimator.SetTrigger("Meow");
+            int rand = Random.Range(0,meowList.Count);
+            currentMeow = meowList[rand];
+            meowSource.clip = currentMeow;
+            meowSource.Play();
             
            /* mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             mousePosition.z = mainCamera.nearClipPlane;
@@ -95,6 +106,7 @@ public class MeowFiring : MonoBehaviour
         if (!canMeow)
         {
             //tracking time between meows in realtime here
+            
             timer += Time.deltaTime;
             if (timer > timeBetweenMeowing)
             {

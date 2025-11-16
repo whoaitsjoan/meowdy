@@ -62,8 +62,12 @@ public class NPCAttentionState : BaseState
     {
         isWaiting = true;
         await Task.Delay(4000);
+        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : 
+        Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
         isWaiting = false;
         state.SwitchState(state.ResetState);
+
+        
     }
     
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)

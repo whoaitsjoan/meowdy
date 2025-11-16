@@ -679,6 +679,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523835226}
   m_CullTransparentMesh: 1
+--- !u!1001 &599343054
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1366717291172845660, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_Name
+      value: BGMUSIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504645433353416203, guid: e46def8b73414f8448964ad740e328fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e46def8b73414f8448964ad740e328fc, type: 3}
 --- !u!1 &628773249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1385,7 @@ MonoBehaviour:
   cat: {fileID: 1400921572}
   back: {fileID: 1400921577}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!1 &1475734670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1871,7 @@ MonoBehaviour:
   cat: {fileID: 1591219546}
   back: {fileID: 1591219551}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!1 &1598932361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7338889415545100608, guid: ff0b9434a8b8c7a4697aae35b19113fe, type: 3}
@@ -1886,7 +1943,7 @@ MonoBehaviour:
   cat: {fileID: 1598932361}
   back: {fileID: 1598932366}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!50 &1598932368
 Rigidbody2D:
   serializedVersion: 5
@@ -1985,7 +2042,7 @@ MonoBehaviour:
   cat: {fileID: 1651133651}
   back: {fileID: 1651133656}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!1 &1955614024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,7 +2264,7 @@ MonoBehaviour:
   cat: {fileID: 1974798520}
   back: {fileID: 1974798525}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!1 &2005270676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,7 +2402,7 @@ MonoBehaviour:
   cat: {fileID: 2006840525}
   back: {fileID: 2006840530}
   TitleCatSpawn: {fileID: 1237976465}
-  speed: 15
+  speed: 0.5
 --- !u!1 &2011545393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,3 +3589,4 @@ SceneRoots:
   - {fileID: 1237976466}
   - {fileID: 336115600}
   - {fileID: 2037016160}
+  - {fileID: 599343054}

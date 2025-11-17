@@ -16,12 +16,10 @@ public class progressBar : MonoBehaviour
     // create variable timeLeft
     public float timeLeft;
 
-    public TextMeshProUGUI cashCount;
-    public TextMeshProUGUI finalCount;
 
     void Start()
     {
-        timeLeft = 8.0f;
+      
     }
     void Update()
     {
@@ -36,7 +34,6 @@ public class progressBar : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0.1)
         {
-            FinalScore();
             GameController.instance.GameOver();
         }
     }
@@ -47,9 +44,5 @@ public class progressBar : MonoBehaviour
         bar.fillAmount = fillAmount;
     }
 
-    void FinalScore()
-    {
-        int.TryParse(cashCount.text, out int finalScore);
-        finalCount.text = "Final Count: " + finalScore;
-    }
+    
 }

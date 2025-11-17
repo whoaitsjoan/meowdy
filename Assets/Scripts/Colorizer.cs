@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Colorizer : MonoBehaviour
 {
@@ -9,10 +8,10 @@ public class Colorizer : MonoBehaviour
     public GameObject Torso;
     public GameObject Legs;
     public GameObject Feet;
-    public Image HHimage;
-    public Image Timage;
-    public Image Limage;
-    public Image Fimage;
+    public SpriteRenderer HHimage;
+    public SpriteRenderer Timage;
+    public SpriteRenderer Limage;
+    public SpriteRenderer Fimage;
     public Color a = new Color(253, 229, 208, 1);
     public Color b = new Color(249, 210, 184, 1);
     public Color c = new Color(245, 192, 158, 1);
@@ -29,10 +28,10 @@ public class Colorizer : MonoBehaviour
     public bool noShirtChange;
     void Start()
     {
-        HHimage = HeadAndHands.GetComponent<Image>();
-        Timage = Torso.GetComponent<Image>();
-        Limage = Legs.GetComponent<Image>();
-        Fimage = Feet.GetComponent<Image>();
+        HHimage = HeadAndHands.GetComponent<SpriteRenderer>();
+        Timage = Torso.GetComponent<SpriteRenderer>();
+        Limage = Legs.GetComponent<SpriteRenderer>();
+        Fimage = Feet.GetComponent<SpriteRenderer>();
         skinTones.Add(a);
         skinTones.Add(b);
         skinTones.Add(c);

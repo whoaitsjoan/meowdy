@@ -17,6 +17,7 @@ public class NPCResetState : BaseState
            state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
            rb.AddForce(new Vector3(-20, 20, 0));
         }
+        state.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public override void ExitState(StateManager state)

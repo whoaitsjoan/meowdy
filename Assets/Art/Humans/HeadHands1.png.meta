@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: a3746c90ccac4d94590e2ccde952d241
+guid: 476f7936b5b62af4fa365feac5f08eab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4130640169021434097
-    second: 5_0
+      213: 4677688527525679221
+    second: HeadHands1_0
+  - first:
+      213: 2136230693848876948
+    second: HeadHands1_1
+  - first:
+      213: 8324112150715202213
+    second: HeadHands1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +115,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5_0
+      name: HeadHands1_0
       rect:
         serializedVersion: 2
-        x: 78
-        y: 2
-        width: 144
-        height: 296
+        x: 110
+        y: 375
+        width: 112
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f86b71495bf25930800000000000000
-      internalID: 4130640169021434097
+      spriteID: 570961daeec7ae040800000000000000
+      internalID: 4677688527525679221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadHands1_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 194
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49706217f7a65ad10800000000000000
+      internalID: 2136230693848876948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadHands1_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 211
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa74e5e5ef258370800000000000000
+      internalID: 8324112150715202213
       vertices: []
       indices: 
       edges: []
@@ -148,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      5_0: 4130640169021434097
+      HeadHands1_0: 4677688527525679221
+      HeadHands1_1: 2136230693848876948
+      HeadHands1_2: 8324112150715202213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

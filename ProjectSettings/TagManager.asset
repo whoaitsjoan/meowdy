@@ -8,6 +8,7 @@ TagManager:
   - Meow
   - Graze
   - ObjectPool
+  - Waypoint
   layers:
   - Default
   - TransparentFX

@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class NPCAttentionState : BaseState
 {
-
     private float moveSpeed = 2f;
     private bool isWaiting;
 
-    
     public override void EnterState(StateManager state)
     {
-        Debug.Log("This is the attention state!");
+        Debug.Log(state.GetCurrentState().ToString());
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
-        Transform t = state.GetComponent<Transform>();
         rb.AddForce(Vector3.zero);
         isWaiting = false;
 
-
+        //This toggles the exclamation point as on while the attention state is active
         state.transform.GetChild(0).gameObject.SetActive(true);
-        Debug.Log("Exclamation on!");
         
     }
 
@@ -46,24 +42,19 @@ public class NPCAttentionState : BaseState
         {
            isWaiting = true;
            WaypointController.instance.WaitAtWaypoint(state);
+           WaypointController.instance.WaypointCollision(state);
         }
     }
 
-   /* async void WaitAtWaypoint(StateManager state)
-    {
-        isWaiting = true;
-        await Task.Delay(4000);
-        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : 
-        Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
-        isWaiting = false;
-        state.SwitchState(state.ResetState);
-
-        
-    }*/
     
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)
     {
-        
+        /*if (other.CompareTag("Waypoint"))
+        {
+            Debug.Log("Collision check!");
+            //NPCcollider = state.GetComponent<Collider2D>();
+            WaypointController.instance.WaypointCollision(state);
+        }*/
     }
 
     public override void OnTriggerStay2D(StateManager state, Collider2D other)

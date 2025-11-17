@@ -5,7 +5,7 @@ public class NPCWalkingState : BaseState
     
     public override void EnterState(StateManager state)
     {
-        Debug.Log("You are in the walking state!");
+        state.IsTransitioningState = false;
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
         rb.AddForce(Vector3.zero);
@@ -33,20 +33,19 @@ public class NPCWalkingState : BaseState
 
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)
     {    
-        if (other.CompareTag("Meow"))
+        if (other.CompareTag("Meow") && !state.IsTransitioningState)
         {
-            Debug.Log("Collision!");
-            state.IsTransitioningState = false;
+            state.IsTransitioningState = true;
             state.SwitchState(state.AttentionState);
         }
         else
         {
             foreach (Transform child in other.transform)
             {
-                if (child.gameObject.name.Contains("MeowGrazeRange"))
+                if (child.gameObject.name.Contains("MeowGrazeRange") && !state.IsTransitioningState)
                 {
                     Debug.Log("Graze!");
-                    state.IsTransitioningState = false;
+                    state.IsTransitioningState = true;
                     state.SwitchState(state.QuestioningState);
                 }
             }

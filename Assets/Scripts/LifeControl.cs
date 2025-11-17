@@ -15,6 +15,7 @@ public class LifeControl : MonoBehaviour
     public Image LVisual3;
     [SerializeField]
     private int livesLeft = 3;
+    
     void Start()
     {
        
@@ -52,21 +53,22 @@ public class LifeControl : MonoBehaviour
             LVisual1.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
             livesLeft--;
         }
-        if (livesLeft == 1)
+        else if (livesLeft == 1)
         {
             strike2 = true;
             LVisual2.sprite = LifeGone;
             LVisual2.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
             livesLeft--;
         }
-        if (livesLeft == 0)
+        else if (livesLeft == 0)
         {
             strike3 = true;
             LVisual3.sprite = LifeGone;
             LVisual3.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
             livesLeft--;
         }
-        if(strike1 && strike2 && strike3)
+
+        if (strike1 && strike2 && strike3)
         {
             GameController.instance.GameOver();
         }
@@ -81,7 +83,7 @@ public class LifeControl : MonoBehaviour
         for (int i = 0; i < lives.Count; i++)
         {
             lives[i].GetComponent<Image>().sprite = LifeFull;
-            lives[i].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            lives[i].GetComponent<Image>().color = Color.white;
             lives[i].SetActive(true);
            
         }

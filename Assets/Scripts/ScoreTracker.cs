@@ -1,17 +1,25 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreTracker : MonoBehaviour
 {
-    public TextMeshProUGUI cashCount;
+    public static ScoreTracker instance;
+    public TextMeshProUGUI cashText;
     public TextMeshProUGUI finalCount;
+    private int cashCount;
 
-    public GameObject fish1, fish2, fish3, fish4;
+    public Image fish1, fish2, fish3, fish4;
     private int fishCollected;
-
+   
     void Start()
     {
+        cashCount = 0;
         fishCollected = 0;
+        fish1.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+        fish2.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+        fish3.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+        fish4.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
     }
 
     // Update is called once per frame
@@ -20,13 +28,34 @@ public class ScoreTracker : MonoBehaviour
         
     }
 
-    public void AddCash()
+    public void AddCash(StateManager state)
     {
+        //only the cat lover gives more cash so we can check that first
+        if(state.gameObject.name.Contains("CatLover"))
+        cashCount += 80;
+        //otherwise, give half that amount
+        else
+        cashCount += 40;
+        //either way, the cash text gets updated accordingly
+        cashText.text = "CASH: $" + cashCount;
+    }
+
+    public void AddFish()
+    {
+       fishCollected++; 
+
+       if (fishCollected == 1)
+        fish1.color = Color.white;
+       else if (fishCollected == 2)
+        fish2.color = Color.white;
+       else if (fishCollected == 3)
+        fish3.color = Color.white;
+       else if (fishCollected == 4)
+        fish4.color = Color.white;
         
     }
     public void FinalScore()
     {
-        int.TryParse(cashCount.text, out int finalScore);
-        finalCount.text = "Final Count: " + finalScore;
+        finalCount.text = "Final Count: " + cashCount;
     }
 }

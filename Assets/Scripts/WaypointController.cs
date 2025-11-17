@@ -67,6 +67,12 @@ public class WaypointController : MonoBehaviour
         
     }
 
+    public void NextWaypoint()
+    {
+        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : 
+        Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
+    }
+
     public void WaypointCollision(StateManager state)
     {
         

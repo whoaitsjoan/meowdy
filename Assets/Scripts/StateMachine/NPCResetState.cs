@@ -26,8 +26,8 @@ public class NPCResetState : BaseState
     }
     public override void UpdateState(StateManager state)
     {
-       
-            if (!state.GetComponent<PolygonCollider2D>().IsTouchingLayers(LayerMask.NameToLayer("People")))
+            //changed polygon collider to capsule
+            if (!state.GetComponent<CapsuleCollider2D>().IsTouchingLayers(LayerMask.NameToLayer("People")))
             state.SwitchState(state.WalkingState);
 
     }

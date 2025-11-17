@@ -6,8 +6,8 @@ public class FishMonger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject HeadAndHands;
-    public Image HHimage;
-    public Image Fimage;
+    public SpriteRenderer HHimage;
+    public SpriteRenderer Fimage;
     public GameObject Feet;
     public Color a = new Color(253, 229, 208, 1);
     public Color b = new Color(249, 210, 184, 1);
@@ -24,8 +24,8 @@ public class FishMonger : MonoBehaviour
     public List<Color> skinTones = new List<Color>();
     void Start()
     {
-        HHimage = HeadAndHands.GetComponent<Image>();
-        Fimage = Feet.GetComponent<Image>();
+        HHimage = HeadAndHands.GetComponent<SpriteRenderer>();
+        Fimage = Feet.GetComponent<SpriteRenderer>();
         skinTones.Add(a);
         skinTones.Add(b);
         skinTones.Add(c);

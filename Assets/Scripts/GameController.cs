@@ -1,26 +1,28 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController Instance;
+    public static GameController instance;
 
     InputSystem_Actions input;
+
+    public UnityEvent gameOver, resetGame;
     void Awake()
     {
         //Singleton method
-        if (Instance == null)
+        if (instance == null)
         {
             //First run, set the instance
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
 
         }
-        else if (Instance != this)
+        else if (instance != this)
         {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            Destroy(Instance.gameObject);
-            Instance = this;
+            //instance is not the same as the one we have, destroy old one, and reset to newest one
+            Destroy(instance.gameObject);
+            instance = this;
             DontDestroyOnLoad(gameObject);
 
         }
@@ -53,11 +55,13 @@ public class GameController : MonoBehaviour
     {
         input.Player.Disable();
         input.UI.Enable();
+        gameOver.Invoke();
     }
     
     public void ResetGame()
     {
         input.UI.Disable();
         input.Player.Enable();
+        resetGame.Invoke();
     }
 }

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: c432091f96dc94b48ba8449acc85693e
+guid: 0f03c5d2425fba14180ba35d19b9cc14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1282816133552531533
-    second: EyeBase_0
-  - first:
-      213: -3768364390436507815
-    second: EyeBase_1
+      213: -6888898294195568640
+    second: fish3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EyeBase_0
+      name: fish3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 657
-        height: 554
+        width: 284
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,30 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d48e9801a7a7dc110800000000000000
-      internalID: 1282816133552531533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EyeBase_1
-      rect:
-        serializedVersion: 2
-        x: 1204
-        y: 0
-        width: 658
-        height: 554
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95fecc37d8414bbc0800000000000000
-      internalID: -3768364390436507815
+      spriteID: 000cda81087b560a0800000000000000
+      internalID: -6888898294195568640
       vertices: []
       indices: 
       edges: []
@@ -189,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EyeBase_0: 1282816133552531533
-      EyeBase_1: -3768364390436507815
+      fish3_0: -6888898294195568640
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

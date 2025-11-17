@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Meow
   - Graze
+  - ObjectPool
   layers:
   - Default
   - TransparentFX

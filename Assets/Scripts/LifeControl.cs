@@ -1,24 +1,20 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class LifeControl : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject Life1;
-    public GameObject Life2;
-    public GameObject Life3;
+    
+    public GameObject Life1, Life2, Life3;
     public Sprite LifeFull;
     public Sprite LifeGone;
-    public bool strike1;
-    public bool strike2;
-    public bool strike3;
+    private bool strike1, strike2, strike3;
     public List<GameObject> lives = new List<GameObject>();
-    public SpriteRenderer SP1;
-    public SpriteRenderer SP2;
-    public SpriteRenderer SP3;
-    public int livesLeft = 3;
+    public Image LVisual1;
+    public Image LVisual2;
+    public Image LVisual3;
+    [SerializeField]
+    private int livesLeft = 3;
     void Start()
     {
        
@@ -28,12 +24,12 @@ public class LifeControl : MonoBehaviour
         lives.Add(Life1);
         lives.Add(Life2);
         lives.Add(Life3);
-        SP1 = Life1.GetComponent<SpriteRenderer>();
-        SP2 = Life2.GetComponent<SpriteRenderer>();
-        SP3 = Life3.GetComponent<SpriteRenderer>();
+        LVisual1 = LVisual1.GetComponent<Image>();
+        LVisual2 = LVisual2.GetComponent<Image>();
+        LVisual3 = LVisual3.GetComponent<Image>();
         for (int i = 0; i < lives.Count; i++)
         {
-            lives[i].GetComponent<SpriteRenderer>().sprite = LifeFull;
+            lives[i].GetComponent<Image>().sprite = LifeFull;
             lives[i].SetActive(true);
         }
         
@@ -42,29 +38,38 @@ public class LifeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (strike1)
-        {
-            SP1.sprite = LifeGone;
-            SP1.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
-            livesLeft--;
-        }
-        if (strike2)
-        {
-            SP2.sprite = LifeGone;
-            SP2.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
-            livesLeft--;
-        }
-        if (strike3)
-        {
-            SP3.sprite = LifeGone;
-            SP3.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
-            livesLeft--;
-        }
-        if(livesLeft == 0)
-        {
-            Debug.Log("You lost!");
-        }
+       
 
+    }
+
+    public void LoseLife()
+    {
+        livesLeft--;
+         if (livesLeft == 2)
+        {
+            strike1 = true;
+            LVisual1.sprite = LifeGone;
+            LVisual1.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+            livesLeft--;
+        }
+        if (livesLeft == 1)
+        {
+            strike2 = true;
+            LVisual2.sprite = LifeGone;
+            LVisual2.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+            livesLeft--;
+        }
+        if (livesLeft == 0)
+        {
+            strike3 = true;
+            LVisual3.sprite = LifeGone;
+            LVisual3.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);
+            livesLeft--;
+        }
+        if(strike1 && strike2 && strike3)
+        {
+            GameController.instance.GameOver();
+        }
     }
 
     public void ResetLives()
@@ -75,8 +80,8 @@ public class LifeControl : MonoBehaviour
         livesLeft = 3;
         for (int i = 0; i < lives.Count; i++)
         {
-            lives[i].GetComponent<SpriteRenderer>().sprite = LifeFull;
-            lives[i].GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            lives[i].GetComponent<Image>().sprite = LifeFull;
+            lives[i].GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
             lives[i].SetActive(true);
            
         }

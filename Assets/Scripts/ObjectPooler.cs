@@ -50,6 +50,11 @@ public class ObjectPooler : MonoBehaviour
     public void ClearList()
     {
         pool.Clear();
+        GameObject[] remainingObjects = GameObject.FindGameObjectsWithTag("ObjectPool");
+        foreach (GameObject obj in remainingObjects) { Destroy(obj); }
+
+
+
     }
 
 }

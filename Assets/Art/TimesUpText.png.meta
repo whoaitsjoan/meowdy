@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 3b00c70f62ffa3a47b62d8779de0781b
+guid: ebb03d691f2f09c4d90d3eb6024cf4db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: 5626560640216336528
+    second: TimesUpText_0
+  - first:
+      213: -3598020557728262625
+    second: TimesUpText_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +100,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: TimesUpText_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 56
-        width: 283
-        height: 187
+        x: 0
+        y: 0
+        width: 1165
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +157,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: 0980a4b671f851e40800000000000000
+      internalID: 5626560640216336528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TimesUpText_1
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 0
+        width: 539
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16dd0aad53411ec0800000000000000
+      internalID: -3598020557728262625
       vertices: []
       indices: 
       edges: []
@@ -148,7 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_0: -6470460504253458178
+      TimesUpText_0: 5626560640216336528
+      TimesUpText_1: -3598020557728262625
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

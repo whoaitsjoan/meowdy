@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -39,7 +37,7 @@ public class progressBar : MonoBehaviour
         if (timeLeft < 0.1)
         {
             FinalScore();
-            timesUp.Invoke();
+            GameController.instance.GameOver();
         }
     }
 
@@ -52,6 +50,6 @@ public class progressBar : MonoBehaviour
     void FinalScore()
     {
         int.TryParse(cashCount.text, out int finalScore);
-        finalCount.text = "Time's Up! \n Final Count: " + finalScore;
+        finalCount.text = "Final Count: " + finalScore;
     }
 }

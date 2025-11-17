@@ -115,6 +115,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -163,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copy of Untitled (8)_2
+      name: LivesIcon
       rect:
         serializedVersion: 2
         x: 1125
@@ -185,15 +211,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lives_0
+      name: LivesEmpty
       rect:
         serializedVersion: 2
-        x: 124
-        y: 213
+        x: 127
+        y: 214
         width: 670
         height: 588
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,8 +248,8 @@ TextureImporter:
     nameFileIdTable:
       Copy of Untitled (8)_0: 4410333049121224483
       Copy of Untitled (8)_1: 1128441671517609520
-      Copy of Untitled (8)_2: 3855169115033653582
-      Lives_0: 1411719361
+      LivesEmpty: 1411719361
+      LivesIcon: 3855169115033653582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

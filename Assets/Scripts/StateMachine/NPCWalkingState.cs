@@ -8,7 +8,7 @@ public class NPCWalkingState : BaseState
         state.IsTransitioningState = false;
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
-        rb.AddForce(Vector3.zero);
+        rb.linearVelocity = Vector3.zero;
         if (t.position.x < 0 && t.position.y > 0)
         {
             rb.AddForce(new Vector3(20, 0, 0));
@@ -28,7 +28,8 @@ public class NPCWalkingState : BaseState
     }
     public override void UpdateState(StateManager state)
     {
-
+        if (PauseController.IsGamePaused)
+            return;
     }
 
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)

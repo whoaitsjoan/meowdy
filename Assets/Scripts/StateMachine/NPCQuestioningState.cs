@@ -7,9 +7,12 @@ public class NPCQuestioningState : BaseState
     {
        state.IsTransitioningState = false;
        Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
-       rb.AddForce(Vector3.zero);
+       rb.linearVelocity = Vector3.zero;
        //this grabs the question mask icon and leaves that for while the state is active
-       state.transform.GetChild(0).gameObject.SetActive(true);
+       if (state.gameObject.name.Contains("Fishmonger"))
+       state.transform.GetChild(4).gameObject.SetActive(true);
+       else
+       state.transform.GetChild(5).gameObject.SetActive(true);
 
     }
 
@@ -19,6 +22,8 @@ public class NPCQuestioningState : BaseState
     }
     public override async void UpdateState(StateManager state)
     {
+        if (PauseController.IsGamePaused)
+            return;
         await Task.Delay(4000);
         state.SwitchState(state.WalkingState);
     }

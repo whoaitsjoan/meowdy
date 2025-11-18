@@ -11,13 +11,14 @@ public class NPCWalkingState : BaseState
         rb.linearVelocity = Vector3.zero;
         if (t.position.x < 0 && t.position.y > 0)
         {
-            rb.AddForce(new Vector3(20, 0, 0));
+            //og 20
+            rb.AddForce(new Vector3(45, 0, 0));
         }
             
         else if (t.position.x > 10)
         {
             state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
-           rb.AddForce(new Vector3(-20, 0, 0)); 
+           rb.AddForce(new Vector3(-45, 0, 0)); 
         }
             
     }

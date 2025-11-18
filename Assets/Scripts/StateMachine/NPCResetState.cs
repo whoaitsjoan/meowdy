@@ -11,12 +11,14 @@ public class NPCResetState : BaseState
         Transform t = state.GetComponent<Transform>();
         if (t.position.x < 0 && t.position.y > 0)
         {
-            rb.AddForce(new Vector3(20, 20, 0));
+            //was 20
+            rb.AddForce(new Vector3(45, 20, 0));
         }
          else if (t.position.x > 10)
         {
            state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
-           rb.AddForce(new Vector3(-20, 20, 0));
+            //was 20
+           rb.AddForce(new Vector3(-45, 20, 0));
         }
 
         if (state.gameObject.name.Contains("Fishmonger"))

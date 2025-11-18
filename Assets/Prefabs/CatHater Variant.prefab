@@ -78,7 +78,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 6871185746592810902, guid: 437aec685c137e348ba0239b1f7ce4a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: noShirtChange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1070063909109035278, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1337021060352319620, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Controller
       value: 
@@ -152,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1972557188502670929, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4075000103243811613, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_LocalScale.x
@@ -214,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 75effc8ac0371064191eb9cd7d1f81a7, type: 3}
+    - target: {fileID: 4078590557562879854, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5105003213599455557, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Size.x
       value: 3.6
@@ -256,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193221855013899564, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8224476583998317810, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Sprite

@@ -13,7 +13,7 @@ public class NPCAttentionState : BaseState
         isWaiting = false;
 
         //This toggles the exclamation point as on while the attention state is active
-        state.transform.GetChild(0).gameObject.SetActive(true);
+        state.transform.GetChild(4).gameObject.SetActive(true);
         
     }
 

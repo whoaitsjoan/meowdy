@@ -8,26 +8,26 @@ public class NPCSpawner : MonoBehaviour
     private float spawnInterval;
     public float numberSpawned = 0;
 
-    public ObjectPooler NPCPool;
+    public ObjectPooler NPCPool, CatLoverPool, CatHaterPool, DobbyPool, PiggiePool, FishmongerPool;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SpawnNPCCoroutine());
+        StartCoroutine(SpawnNPCCoroutine(1));
     }
 
-    public void NewSpawn()
+    public void NewSpawn(int gameLevel)
     {
         numberSpawned = 0;
-        StartCoroutine(SpawnNPCCoroutine());
+        StartCoroutine(SpawnNPCCoroutine(gameLevel));
     }
     
-    IEnumerator SpawnNPCCoroutine()
+    IEnumerator SpawnNPCCoroutine(int gameLevel)
     {
         
         while(numberSpawned < 1)
         {
             yield return new WaitForSeconds(spawnInterval);
-            SpawnObject();
+            SpawnObject(gameLevel);
             numberSpawned++;
             yield return new WaitForSeconds(spawnInterval);
             
@@ -35,9 +35,20 @@ public class NPCSpawner : MonoBehaviour
         numberSpawned--;
     }
 
-    void SpawnObject()
+    void SpawnObject(int gameLevel)
     {
-        GameObject NPC = NPCPool.GetPooledObject();
+        GameObject NPC = new GameObject();
+        if (gameLevel == 1)
+        //at the start of the game, it's just the regular NPCs showing up, so this works normally
+        NPC = NPCPool.GetPooledObject();
+        else if (gameLevel == 2)
+        //this now adds in the dogs and cat lovers, so a 1-4 range
+        switch (Random.Range(1,5))
+            {
+             case 1: NPC = NPCPool.GetPooledObject(); break;   
+            }
+        
+
         NPC.transform.position = transform.position;
         NPC.SetActive(true);
     }

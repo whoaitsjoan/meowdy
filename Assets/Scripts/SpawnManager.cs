@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +11,9 @@ public class SpawnManager : MonoBehaviour
     private int currentSpawnPoint;
     private int gameLevel = 1;
 
-    public UnityEvent newSpawn;
+    private int NPCLimit = 6;
+
+    public UnityEvent spawnLevel1, spawnLevel2, spawnLevel3;
 
     private List<StateManager> activeNPCs = new(); 
     void Awake()
@@ -52,7 +55,8 @@ public class SpawnManager : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad >= 1.5f && gameLevel == 1)
         gameLevel++;
-        
+        else if (Time.timeSinceLevelLoad >= 3f && gameLevel == 2)
+        gameLevel++;
 
     }
 
@@ -64,12 +68,18 @@ public class SpawnManager : MonoBehaviour
     public void UpdateSpawns(StateManager state)
     {
         activeNPCs.Remove(state);
-        newSpawn.Invoke();
+        DetermineNextSpawn();
 
     }
 
     public void DetermineNextSpawn()
     {
-        
+        if (activeNPCs.Count >= NPCLimit)
+        return;
+
+        Transform availableSpawn = spawnPoints.First(i => i.GetComponent<NPCSpawner>().numberSpawned == 0);
+        availableSpawn.GetComponent<NPCSpawner>().NewSpawn(gameLevel);
+
+
     }
 }

@@ -249,9 +249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b172dc41e525924ca3f7b1a784abd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
-  spawnInterval: 10
+  spawnInterval: 3
   numberSpawned: 0
   NPCPool: {fileID: 1252422105}
+  CatLoverPool: {fileID: 921458274}
+  CatHaterPool: {fileID: 865792375}
+  DobbyPool: {fileID: 2133350473}
+  PiggiePool: {fileID: 459084546}
+  FishmongerPool: {fileID: 903820510}
 --- !u!4 &240651045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1673515002095791301, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
@@ -2710,9 +2715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b172dc41e525924ca3f7b1a784abd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
-  spawnInterval: 3
+  spawnInterval: 9
   numberSpawned: 0
   NPCPool: {fileID: 1252422105}
+  CatLoverPool: {fileID: 921458274}
+  CatHaterPool: {fileID: 865792375}
+  DobbyPool: {fileID: 2133350473}
+  PiggiePool: {fileID: 459084546}
+  FishmongerPool: {fileID: 903820510}
 --- !u!114 &1208877032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4075,9 +4085,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b172dc41e525924ca3f7b1a784abd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
-  spawnInterval: 1
+  spawnInterval: 6
   numberSpawned: 0
   NPCPool: {fileID: 1252422105}
+  CatLoverPool: {fileID: 921458274}
+  CatHaterPool: {fileID: 865792375}
+  DobbyPool: {fileID: 2133350473}
+  PiggiePool: {fileID: 459084546}
+  FishmongerPool: {fileID: 903820510}
 --- !u!1 &1913818842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4417,9 +4432,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b172dc41e525924ca3f7b1a784abd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
-  spawnInterval: 4
+  spawnInterval: 2
   numberSpawned: 0
   NPCPool: {fileID: 1252422105}
+  CatLoverPool: {fileID: 921458274}
+  CatHaterPool: {fileID: 865792375}
+  DobbyPool: {fileID: 2133350473}
+  PiggiePool: {fileID: 459084546}
+  FishmongerPool: {fileID: 903820510}
 --- !u!1 &2061164602
 GameObject:
   m_ObjectHideFlags: 0

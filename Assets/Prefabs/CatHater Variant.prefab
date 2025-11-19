@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781279876316632784}
   - component: {fileID: 4743817721827106191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grawlix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +158,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3222051586265160554, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259929855203821435, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4075000103243811613, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -222,6 +230,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4590396832261023152, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590396832261023152, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917937766429205233, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5105003213599455557, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Size.x
       value: 3.6
@@ -266,6 +286,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7279914637113360541, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8224476583998317810, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -277,6 +301,14 @@ PrefabInstance:
     - target: {fileID: 8661929096652922816, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
       propertyPath: m_Name
       value: CatHater Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661929096652922816, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661929096652922816, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}
+      propertyPath: m_TagString
+      value: ObjectPool
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7543259996307794404, guid: 0c4ff6b9c752c644cbf8c90a1fa8aa83, type: 3}

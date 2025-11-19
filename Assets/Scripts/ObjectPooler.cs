@@ -15,7 +15,8 @@ public class ObjectPooler : MonoBehaviour
     private void InitializePool()
     {
         pool = new List<GameObject>();
-
+        if (prefab.name.Contains("Fishmonger"))
+        poolSize = 4;
         for (int i = 0; i < poolSize; i++)
         {
             CreateNewObj();

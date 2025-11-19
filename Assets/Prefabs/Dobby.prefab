@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8763665465149627624}
   - component: {fileID: 2457925310696702222}
   - component: {fileID: 2351420479793850643}
+  - component: {fileID: 8112391368972308894}
   - component: {fileID: 4596709990332686631}
   - component: {fileID: 2336180321952834676}
   - component: {fileID: 7793751886438920413}
   - component: {fileID: 8371852764887575109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dobby
-  m_TagString: Untagged
+  m_TagString: ObjectPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +134,33 @@ CapsuleCollider2D:
   m_Offset: {x: -0.16, y: 0.07}
   m_Size: {x: 10.32, y: 5.39}
   m_Direction: 1
+--- !u!50 &8112391368972308894
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661726357350819268}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 136
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 96
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &4596709990332686631
 Animator:
   serializedVersion: 7
@@ -294,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1525143614492269760}
   - component: {fileID: 1468717754709319102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grawlix
   m_TagString: Untagged
   m_Icon: {fileID: 0}

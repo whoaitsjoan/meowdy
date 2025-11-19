@@ -47,6 +47,7 @@ public class NPCResetState : BaseState
         {
             state.IsTransitioningState = true;
             SpawnManager.instance.UpdateSpawns(state);
+            state.gameObject.SetActive(false);
         }
     }
 

@@ -1,6 +1,4 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using System.Xml;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +13,11 @@ public class ScoreTracker : MonoBehaviour
     public AudioSource coinSource;
 
     public Image fish1, fish2, fish3, fish4;
-    private int fishCollected;
+    public int fishCollected;
    
     void Start()
     {
+        instance = this;
         cashCount = 0;
         fishCollected = 0;
         fish1.color = new Color(0.75f, 0.5f, 0.5f, 0.75f);

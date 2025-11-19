@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996662198306327555}
   - component: {fileID: 8351350691244394638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grawlix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,13 +101,14 @@ GameObject:
   - component: {fileID: 7369928032143232679}
   - component: {fileID: 5853447886108485228}
   - component: {fileID: 3831025673453603833}
+  - component: {fileID: 8342536168652004399}
   - component: {fileID: 7697335603838649411}
   - component: {fileID: 2668296948974146313}
   - component: {fileID: 4855944670042928203}
   - component: {fileID: 645176820536238298}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piggie
-  m_TagString: Untagged
+  m_TagString: ObjectPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,6 +224,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0.1, y: 0.01}
   m_Size: {x: 7, y: 3.65}
   m_Direction: 1
+--- !u!50 &8342536168652004399
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779795760634153647}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 96
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &7697335603838649411
 Animator:
   serializedVersion: 7

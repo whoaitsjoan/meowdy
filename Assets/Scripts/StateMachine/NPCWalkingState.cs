@@ -70,6 +70,7 @@ public class NPCWalkingState : BaseState
         {
             state.IsTransitioningState = true;
             SpawnManager.instance.UpdateSpawns(state);
+            state.gameObject.SetActive(false);
         }
 
     }

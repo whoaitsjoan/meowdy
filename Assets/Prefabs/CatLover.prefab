@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074190698265746267}
   - component: {fileID: 5714906783874716270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Questioning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9041328777037437321}
   - component: {fileID: 3964874440929480094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Surprised
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,6 +188,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182768422775333027, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 217242466282273970, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1670512786238593206, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -236,14 +244,30 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4720cb1c725aa83459f7b70e38959f5a, type: 2}
+    - target: {fileID: 5382850270897956677, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6305479940841011224, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
       propertyPath: m_Name
-      value: CatLover Variant
+      value: CatLover
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305479940841011224, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305479940841011224, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_TagString
+      value: ObjectPool
       objectReference: {fileID: 0}
     - target: {fileID: 6744140335469757226, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b455852711ce32d478e865469b33b4ff, type: 3}
+    - target: {fileID: 7779067102170596649, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9052421760073007592, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.5

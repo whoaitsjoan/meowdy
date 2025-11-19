@@ -5,6 +5,7 @@ public class NPCAngryState : BaseState
     private float moveSpeed = 3f;
     private Rigidbody2D rb;
     
+    
     public override void EnterState(StateManager state)
     {
        state.IsTransitioningState = false;

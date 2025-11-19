@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour
@@ -10,6 +11,7 @@ BaseState CurrentState;
    public NPCAngryState AngryState = new NPCAngryState();
    public NPCResetState ResetState = new NPCResetState();
    public bool IsTransitioningState = false;
+    public string stateCurrent;
    
     public BaseState GetCurrentState() { return CurrentState; }
     void Start() 
@@ -20,7 +22,10 @@ BaseState CurrentState;
 
 
     void Update()
-    { CurrentState.UpdateState(this); }
+    { CurrentState.UpdateState(this); 
+      stateCurrent = CurrentState.ToString();                              
+    
+    }
     
     public void SwitchState(BaseState state)
     {

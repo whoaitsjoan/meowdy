@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Xml;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +11,8 @@ public class ScoreTracker : MonoBehaviour
     public TextMeshProUGUI cashText;
     public TextMeshProUGUI finalCount;
     private int cashCount;
+    public List<AudioClip> coinSound = new List<AudioClip>();
+    public AudioSource coinSource;
 
     public Image fish1, fish2, fish3, fish4;
     private int fishCollected;
@@ -38,6 +43,9 @@ public class ScoreTracker : MonoBehaviour
         cashCount += 40;
         //either way, the cash text gets updated accordingly
         cashText.text = "CASH: $" + cashCount;
+        int rand = Random.Range(0, coinSound.Count);
+        coinSource.clip = coinSound[rand];
+        coinSource.Play();
     }
 
     public void AddFish()

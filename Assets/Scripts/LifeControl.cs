@@ -15,6 +15,8 @@ public class LifeControl : MonoBehaviour
     public Image LVisual3;
     [SerializeField]
     private int livesLeft = 3;
+    public List<AudioClip> yeowls = new List<AudioClip>();
+    public AudioSource YeowlCentral;
     
     void Start()
     {
@@ -45,6 +47,9 @@ public class LifeControl : MonoBehaviour
 
     public void LoseLife()
     {
+        int rand = Random.Range(0, yeowls.Count);
+        YeowlCentral.clip = yeowls[rand];
+        YeowlCentral.Play();
         livesLeft--;
          if (livesLeft == 2)
         {

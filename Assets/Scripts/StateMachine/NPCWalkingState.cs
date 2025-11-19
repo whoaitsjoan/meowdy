@@ -2,23 +2,24 @@ using UnityEngine;
 
 public class NPCWalkingState : BaseState
 {
+    Rigidbody2D rb;
     
     public override void EnterState(StateManager state)
     {
         state.IsTransitioningState = false;
-        Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
+        rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
         rb.linearVelocity = Vector3.zero;
         if (t.position.x < 0)
         {
             //og 20
-            rb.AddForce(new Vector3(45, 0, 0));
+            rb.AddForce(new Vector3(85, 0, 0));
         }
             
         else if (t.position.x > 10)
         {
             state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
-           rb.AddForce(new Vector3(-45, 0, 0)); 
+           rb.AddForce(new Vector3(-85, 0, 0)); 
         }
         SpawnManager.instance.AddNPC(state);
             
@@ -32,6 +33,12 @@ public class NPCWalkingState : BaseState
     {
         if (PauseController.IsGamePaused)
             return;
+       /* if (rb.linearVelocity.x == 0 && !state.IsTransitioningState)
+        {
+        rb.AddForce(new Vector3(1,0,0));
+        state.IsTransitioningState = true;
+        EnterState(state);
+        }*/
     }
 
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)

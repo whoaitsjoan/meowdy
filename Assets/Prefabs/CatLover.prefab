@@ -264,6 +264,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b455852711ce32d478e865469b33b4ff, type: 3}
+    - target: {fileID: 7596542775192018589, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596542775192018589, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596542775192018589, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 7779067102170596649, guid: 9de5c8b2999ba00458b3cd61b2ac17c7, type: 3}
       propertyPath: m_Layer
       value: 6

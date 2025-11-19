@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour
@@ -14,17 +13,27 @@ BaseState CurrentState;
     public string stateCurrent;
    
     public BaseState GetCurrentState() { return CurrentState; }
-    void Start() 
+
+    /*void OnEnable() 
     {
         CurrentState = WalkingState;
         CurrentState.EnterState(this); 
-        }
+    }*/
 
+    void Start() 
+    {
+        if (CurrentState != WalkingState)
+        {
+        CurrentState = WalkingState;
+        CurrentState.EnterState(this); 
+        }
+    }
+   
 
     void Update()
-    { CurrentState.UpdateState(this); 
+    { 
+      CurrentState.UpdateState(this); 
       stateCurrent = CurrentState.ToString();                              
-    
     }
     
     public void SwitchState(BaseState state)

@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class NPCResetState : BaseState
 {
-    
+    Rigidbody2D rb;
     public override void EnterState(StateManager state)
     {
         state.IsTransitioningState = false;
         Debug.Log("Reset State!");
-        Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
+        rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
         if (t.position.x < 0)
         {
             //was 20
-            rb.AddForce(new Vector3(45, 20, 0));
+            rb.AddForce(new Vector3(85, 40, 0));
         }
          else if (t.position.x > 0)
         {
            
             //was 20
-           rb.AddForce(new Vector3(-45, 20, 0));
+           rb.AddForce(new Vector3(-85, 40, 0));
         }
 
         if (state.gameObject.name.Contains("Fishmonger"))
@@ -38,6 +38,13 @@ public class NPCResetState : BaseState
     {
         if (PauseController.IsGamePaused)
             return;
+        Transform target = WaypointController.instance.GetCurrentWaypoint();
+        if (rb.linearVelocity.x == 0 && !(Vector2.Distance(state.transform.position, target.position) < 0.1f))
+        {
+        rb.AddForce(new Vector3(1,0,0));
+        state.IsTransitioningState = true;
+        EnterState(state);
+        }
 
     }
     
@@ -48,6 +55,7 @@ public class NPCResetState : BaseState
             state.IsTransitioningState = true;
             SpawnManager.instance.UpdateSpawns(state);
             state.gameObject.SetActive(false);
+            state.SwitchState(state.WalkingState);
         }
     }
 

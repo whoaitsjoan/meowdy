@@ -827,7 +827,7 @@ GameObject:
   - component: {fileID: 687094940}
   - component: {fileID: 687094939}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: MusicCredit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Music: "Sidewalk Sade" by Kevin Macleod'
+  m_text: 'Music: "Sidewalk Sade" by Kevin MacLeod'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ccd82ec178bc11948916a2d6ba643c1b, type: 2}
   m_sharedMaterial: {fileID: 8950074473367297487, guid: ccd82ec178bc11948916a2d6ba643c1b, type: 2}
@@ -881,8 +881,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287401100
-  m_fontColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+    rgba: 4294629189
+  m_fontColor: {r: 0.27058825, g: 0.8431373, b: 0.9803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

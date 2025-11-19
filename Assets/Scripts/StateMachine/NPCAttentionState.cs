@@ -4,6 +4,7 @@ public class NPCAttentionState : BaseState
 {
     private float moveSpeed = 2f;
     private bool isWaiting;
+    private bool isMoving;
 
     private Rigidbody2D rb;
 
@@ -12,6 +13,7 @@ public class NPCAttentionState : BaseState
         rb = state.GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector3.zero;
         isWaiting = false;
+        isMoving = false;
 
         //This toggles the exclamation point as on while the attention state is active
         if (state.gameObject.name.Contains("Fishmonger"))
@@ -31,7 +33,7 @@ public class NPCAttentionState : BaseState
             return;
         
         
-
+    if (rb != null)
         MoveToWaypoint(state);
     }
 
@@ -41,7 +43,11 @@ public class NPCAttentionState : BaseState
        
         Transform target = WaypointController.instance.GetCurrentWaypoint();
         state.transform.position = Vector2.MoveTowards(state.transform.position, target.position, moveSpeed * Time.deltaTime);
-        WaypointController.instance.NextWaypoint();
+        if (!isMoving)
+        {
+        WaypointController.instance.NextWaypoint(state);
+        isMoving = true;
+        }
 
         if (Vector2.Distance(state.transform.position, target.position) < 0.1f)
         {

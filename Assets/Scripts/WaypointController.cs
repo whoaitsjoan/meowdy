@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -9,6 +11,8 @@ public class WaypointController : MonoBehaviour
     public bool loopWaypoints = true;
     private Transform[] waypoints;
     private int currentWaypointIndex;
+
+    public List<StateManager> movedNPCs = new();
 
     [SerializeField]
     private ScoreTracker scoreTracker;
@@ -67,10 +71,19 @@ public class WaypointController : MonoBehaviour
         
     }
 
-    public void NextWaypoint()
+    public void NextWaypoint(StateManager state)
     {
+        if(state.GetCurrentState().ToString().Contains("AttentionState"))
+        movedNPCs.Add(state);
+
         currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : 
         Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
+       
+        if (movedNPCs.Count == waypoints.Length)
+        {
+        movedNPCs.ElementAt(0).SwitchState(movedNPCs.ElementAt(0).ResetState);
+        movedNPCs.RemoveAt(0);
+        }
     }
 
     public void WaypointCollision(StateManager state)

@@ -1,6 +1,6 @@
-using UnityEditor.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class TitleCatMove : MonoBehaviour
    
 {

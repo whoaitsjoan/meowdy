@@ -56,6 +56,6 @@ public class ScoreTracker : MonoBehaviour
     }
     public void FinalScore()
     {
-        finalCount.text = "Final Count: " + cashCount;
+        finalCount.text = "Final Count: $" + cashCount;
     }
 }

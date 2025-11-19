@@ -14,15 +14,25 @@ public class NPCSpawner : MonoBehaviour
     {
         StartCoroutine(SpawnNPCCoroutine());
     }
+
+    public void NewSpawn()
+    {
+        numberSpawned = 0;
+        StartCoroutine(SpawnNPCCoroutine());
+    }
     
     IEnumerator SpawnNPCCoroutine()
     {
-        while(numberSpawned < 2)
+        
+        while(numberSpawned < 1)
         {
             yield return new WaitForSeconds(spawnInterval);
             SpawnObject();
             numberSpawned++;
+            yield return new WaitForSeconds(spawnInterval);
+            
         }
+        numberSpawned--;
     }
 
     void SpawnObject()

@@ -9,7 +9,7 @@ public class NPCWalkingState : BaseState
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
         rb.linearVelocity = Vector3.zero;
-        if (t.position.x < 0 && t.position.y > 0)
+        if (t.position.x < 0)
         {
             //og 20
             rb.AddForce(new Vector3(45, 0, 0));
@@ -20,6 +20,7 @@ public class NPCWalkingState : BaseState
             state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
            rb.AddForce(new Vector3(-45, 0, 0)); 
         }
+        SpawnManager.instance.AddNPC(state);
             
     }
 
@@ -37,14 +38,26 @@ public class NPCWalkingState : BaseState
     {    
         if (other.CompareTag("Meow") && !state.IsTransitioningState)
         {
+            if (state.gameObject.name.Contains("Dobby") || state.gameObject.name.Contains("Piggie") || state.gameObject.name.Contains("CatHater"))
+            {
             state.IsTransitioningState = true;
-            state.SwitchState(state.AttentionState);
+            state.SwitchState(state.AngryState); 
+            
+            }
+            else 
+            {
+            state.IsTransitioningState = true;
+            state.SwitchState(state.AttentionState); 
+            }
         }
         else
         {
             foreach (Transform child in other.transform)
             {
-                if (child.gameObject.name.Contains("MeowGrazeRange") && !state.IsTransitioningState)
+                if (state.gameObject.name.Contains("Dobby") || state.gameObject.name.Contains("Piggie") || state.gameObject.name.Contains("CatHater"))
+                return;
+
+                else if (child.gameObject.name.Contains("MeowGrazeRange") && !state.IsTransitioningState)
                 {
                     Debug.Log("Graze!");
                     state.IsTransitioningState = true;
@@ -52,6 +65,13 @@ public class NPCWalkingState : BaseState
                 }
             }
         }
+
+        if (other.CompareTag("Wall") && !state.IsTransitioningState)
+        {
+            state.IsTransitioningState = true;
+            SpawnManager.instance.UpdateSpawns(state);
+        }
+
     }
     
 

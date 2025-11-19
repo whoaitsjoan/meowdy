@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
@@ -41,6 +42,10 @@ public class ObjectPooler : MonoBehaviour
 
     private GameObject CreateNewObj()
     {
+        while (pool.Count >= poolSize)
+        {
+            Destroy(pool.ElementAt(0));
+        }
         GameObject obj = Instantiate(prefab, transform);
         obj.SetActive(false);
         pool.Add(obj);

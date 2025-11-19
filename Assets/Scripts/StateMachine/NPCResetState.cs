@@ -9,14 +9,14 @@ public class NPCResetState : BaseState
         Debug.Log("Reset State!");
         Rigidbody2D rb = state.GetComponent<Rigidbody2D>();
         Transform t = state.GetComponent<Transform>();
-        if (t.position.x < 0 && t.position.y > 0)
+        if (t.position.x < 0)
         {
             //was 20
             rb.AddForce(new Vector3(45, 20, 0));
         }
-         else if (t.position.x > 10)
+         else if (t.position.x > 0)
         {
-           state.transform.localScale = new Vector3(state.transform.localScale.x *-1, state.transform.localScale.y, state.transform.localScale.z); 
+           
             //was 20
            rb.AddForce(new Vector3(-45, 20, 0));
         }
@@ -43,7 +43,11 @@ public class NPCResetState : BaseState
     
     public override void OnTriggerEnter2D(StateManager state, Collider2D other)
     {
-        
+        if (other.CompareTag("Wall") && !state.IsTransitioningState)
+        {
+            state.IsTransitioningState = true;
+            SpawnManager.instance.UpdateSpawns(state);
+        }
     }
 
     public override void OnTriggerStay2D(StateManager state, Collider2D other)

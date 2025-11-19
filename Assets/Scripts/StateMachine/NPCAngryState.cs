@@ -51,7 +51,7 @@ public class NPCAngryState : BaseState
        
         Transform target = WaypointController.instance.GetCurrentWaypoint();
         state.transform.position = Vector2.MoveTowards(state.transform.position, target.position, moveSpeed * Time.deltaTime);
-        WaypointController.instance.NextWaypoint();
+        WaypointController.instance.NextWaypoint(state);
 
         if (Vector2.Distance(state.transform.position, target.position) < 0.1f)
         {
